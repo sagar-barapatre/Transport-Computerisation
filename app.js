@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const session = require("express-session");
 var axios = require("axios");
 const bcrypt = require("bcrypt");
+const dotenv = require("dotenv"):
 const User = require("./models/User");
 const Order = require("./models/Order");
 const Driver = require("./models/Driver");
@@ -15,7 +16,7 @@ var reqbodypricing = Math.floor(Math.random() * 501) + 500;
 
 mongoose
   .connect(
-    "mongodb+srv://sagar:sagar2019.@cluster0.nxqpo.mongodb.net/WebDevWorkshop?retryWrites=true&w=majority",
+    "process.env.MONGO_URI",
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
@@ -653,7 +654,7 @@ app.post("/logout",(req,res)=>{
     res.redirect("/");
 })
 
-const PORT = 8080;
+const PORT = process.env.PORT || 3030;
   app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
   });
