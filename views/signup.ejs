@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/signup.css">
+    <script src="https://kit.fontawesome.com/b8f28cdeea.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="main-page">
+    
+        <div class="smooth login" id="login">
+            <h1 class="login__header header">Welcome back to the party club</h1>
+            <p class="login__byline">It's good to see you again, come in using your favourite social network</p>
+            <div class="social-media__container">
+                <span class="fa-stack fa-lg social-media__icon icon">
+                    <i class="fas fa-circle fa-stack-2x" style="color: #3b5998;"></i>
+                    <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="fa-stack fa-lg social-media__icon icon">
+                    <i class="fas fa-circle fa-stack-2x" style="color: #DF4D3B;"></i>
+                    <i class="fab fa-google-plus-g fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="fa-stack fa-lg social-media__icon icon">
+                    <i class="fas fa-circle fa-stack-2x" style="color: #0e76a8;"></i>
+                    <i class="fab fa-linkedin-in fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="fa-stack fa-lg social-media__icon icon">
+                    <i class="fas fa-circle fa-stack-2x" style="color: #333;"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="fa-stack fa-lg social-media__icon icon">
+                    <i class="fas fa-circle fa-stack-2x" style="color: #48556D;"></i>
+                    <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                </span>
+                
+            </div>
+            <fieldset class="form">
+                <legend class="form__legend">OR</legend>
+                <form action="/login" class="form__body form-login" method="POST">
+                    <input class="form__input" name="email" type="email" placeholder="Email">
+                    <input class="form__input" name="password" type="password" placeholder="Password">
+                    <button class="btn" type="submit">Sign in</button>
+                </form>
+            </fieldset>
+        </div>
+    
+        <div class="switch">
+            <div class="switch__text-container" id="switch-text">
+                <h1 class="switch__header header">Not yet a member?</h1>
+                <p>Sign up and discover what we can do for you</p>
+            </div>
+            <button class="btn-white btn" id="switch-button">Sign up</button>
+        </div>
+    
+        <div class="smooth signup hide-view" id="signup">
+            <h1 class="signup__header header">Create a new account</h1>
+            <p class="signup__byline">You can use your favourite social network</p>
+            <div class="social-media__container">
+                <span class="fa-stack fa-lg social-media__icon icon">
+                    <i class="fas fa-circle fa-stack-2x" style="color: #3b5998;"></i>
+                    <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="fa-stack fa-lg social-media__icon icon">
+                    <i class="fas fa-circle fa-stack-2x" style="color: #DF4D3B;"></i>
+                    <i class="fab fa-google-plus-g fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="fa-stack fa-lg social-media__icon icon">
+                    <i class="fas fa-circle fa-stack-2x" style="color: #0e76a8;"></i>
+                    <i class="fab fa-linkedin-in fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="fa-stack fa-lg social-media__icon icon">
+                    <i class="fas fa-circle fa-stack-2x" style="color: #333;"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="fa-stack fa-lg social-media__icon icon">
+                    <i class="fas fa-circle fa-stack-2x" style="color: #48556D;"></i>
+                    <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                </span>
+            </div>
+            <fieldset class="form">
+                <legend class="form__legend">OR</legend>
+                <form action="/register" class="form__body form-login" method="POST">
+                    <div class="input__group">
+                        <input class="form__input form__input-half" type="text" name="firstName" placeholder="First name">
+                        <input class="form__input form__input-half" type="text" name="lastName" placeholder="Last name">
+                    </div>
+                    <div class="input__group">
+                        <input class="form__input form__input-half" type="email" name="email" placeholder="Email">
+                        <input class="form__input form__input-half" type="password" name="password" placeholder="Password">
+                    </div>
+                    <div class="input__group">
+                        <input class="form__input-checkbox" type="checkbox"> I have read the <a href="#">terms and
+                            conditions</a>
+                    </div>
+                    <button class="btn" type="submit">Sign up</button>
+                </form>
+            </fieldset>
+        </div>
+    
+    </div>
+    <script src="js/signup.js"></script>
+</body>
+</html>

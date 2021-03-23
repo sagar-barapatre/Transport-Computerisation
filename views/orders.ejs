@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.1/css/mdb.min.css">
+    <link rel="stylesheet" href="css/orders.css">
+
+</head>
+
+<body class="hm-gradient">
+
+    <main>
+    
+        <!--MDB Tables-->
+        <div class="container mt-4">
+    
+            <div class="text-center darken-grey-text mb-4">
+                <h1 class="font-bold mt-4 mb-3 h1"><b>My Orders ! </b></h1>
+                <br>
+                <a class="btn btn-danger btn-md" href="/placeOrder" target="_blank">New Order <i
+                        class="fa fa-cart-plus"></i></a>
+    
+                <a class="btn btn-danger" href="/feedback" target="_blank">Provide a Feedback to Us</a>
+                <a class="btn btn-danger" href="/logout" target="_blank">Log OUT</a>
+
+            </div>
+<div class="card mb-4">
+    <div class="card-body">
+        <!--Table-->
+        <table class="table table-hover">
+            <!--Table head-->
+            <thead class="mdb-color darken-3">
+                <tr class="text-white">
+
+                    <th>Full Name</th>
+                    <th>Pricing</th>
+                    <th>Email ID</th>
+                    <th>Pickup Location</th>
+                    <th>Drop Location</th>
+                    <th>Driver Assigned</th>
+                    <th>Vehicle Assigned</th>
+                    <th>Extra Messages</th>
+                </tr>
+                        </thead>
+                        <!--Table head-->
+                        <!--Table body-->
+                        <% records.forEach(function(row){ %>
+                            <tbody>
+                                <tr>
+                                            <td>
+                                        <%= row.firstandlastname %>
+                                    </td>
+                                    <td>
+                                        <%= row.Pricing %>
+                                    </td>
+                                    <td>
+                                        <%= row.emailID %>
+                                            </td>
+                                            <td>
+                                        <%= row.PickupState %>, <%= row.PickupCity %>
+                                    </td>
+                                    <td>
+                                        <%= row.DropState %>, <%= row.DropCity %>
+                                    </td>
+                                    <td>
+                                        <%= row.Drivers %>
+                                            </td>
+                                            <td>
+                                                <%= row.Vehicles %>
+                                            </td>
+                                            <td>
+                                        <%= row.extraMessages %>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                            <% }) %>
+                                <!--Table body-->
+                    </table>
+                    <!--Table-->
+                </div>
+            </div>
+            <hr class="my-4">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            
+            <br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+        </div>
+        <!--MDB Tables-->
+        
+        </main>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.1/js/mdb.min.js"></script>
+        <script src=".js/orders.js"></script>
+</body>
+
+</html>

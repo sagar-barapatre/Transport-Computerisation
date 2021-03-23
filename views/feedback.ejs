@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Point Distance</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/feedback.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+</head>
+
+<body>
+    <svg class="fb-emotes-svg" style="display: none;">
+        <symbol id="fb-emote-terrible" data-emote="terrible" viewBox="0 0 100 100">
+            <path class="fb-emote__eye fb-emote__eye--left" d="M32,25 l10,10 a10,10 0 0,1 -20,0 a10,10 0 0,1 10,-10" />
+            <path class="fb-emote__eye fb-emote__eye--right"
+                d="M58,35 l10,-10 a10,10 0 0,1 0,20 a10,10 0 0,1 -10,-10" />
+            <path class="fb-emote__smile" d="M30,68 q20,-13 40,0 M30,68 q20,-13 40,0" />
+        </symbol>
+        <symbol id="fb-emote-bad" data-emote="bad" viewBox="0 0 100 100">
+            <path class="fb-emote__eye fb-emote__eye--left" d="M22,35 l10,-10 a10,10 0 0,1 0,20 a10,10 0 0,1 -10,-10" />
+            <path class="fb-emote__eye fb-emote__eye--right" d="M68,25 l10,10 a10,10 0 0,1 -20,0 a10,10 0 0,1 10,-10" />
+            <path class="fb-emote__smile" d="M30,68 q20,-10 40,0 M30,68 q20,-10 40,0" />
+        </symbol>
+        <symbol id="fb-emote-okay" viewBox="0 0 100 100">
+            <path class="fb-emote__eye fb-emote__eye--left" d="M32,25 a10,10 0 0,1 0,20 a10,10 0 0,1 0,-20" />
+            <path class="fb-emote__eye fb-emote__eye--right" d="M68,25 a10,10 0 0,1 0,20 a10,10 0 0,1 0,-20" />
+            <path class="fb-emote__smile" d="M35,73 q20,-4 35,-8 M35,73 q20,-4 35,-8" />
+        </symbol>
+        <symbol id="fb-emote-good" viewBox="0 0 100 100">
+            <path class="fb-emote__eye fb-emote__eye--left" d="M32,25 a10,10 0 0,1 0,20 a10,10 0 0,1 0,-20" />
+            <path class="fb-emote__eye fb-emote__eye--right" d="M68,25 a10,10 0 0,1 0,20 a10,10 0 0,1 0,-20" />
+            <path class="fb-emote__smile" d="M30,68 q20,10 40,0 M30,68 q20,10 40,0" />
+        </symbol>
+        <symbol id="fb-emote-great" viewBox="0 0 100 100">
+            <path class="fb-emote__eye fb-emote__eye--left" d="M32,25 a10,10 0 0,1 0,20 a10,10 0 0,1 0,-20" />
+            <path class="fb-emote__eye fb-emote__eye--right" d="M68,25 a10,10 0 0,1 0,20 a10,10 0 0,1 0,-20" />
+            <path class="fb-emote__smile" d="M30,68 q20,15 40,0 M30,68 q20,0 40,0" />
+        </symbol>
+    </svg>
+
+    <div class="fb-cont">
+        <div class="fb-heading">How was the help you received?</div>
+        <div class="fb-cont__inner">
+            <div class="fb-emote" data-emote="terrible">
+                <svg>
+                    <use xlink:href="#fb-emote-terrible" />
+                </svg>
+                <p class="fb-emote__caption">Terrible</p>
+            </div>
+            <div class="fb-emote" data-emote="bad">
+                <svg>
+                    <use xlink:href="#fb-emote-bad" />
+                </svg>
+                <p class="fb-emote__caption">Bad</p>
+            </div>
+            <div class="fb-emote s--active" data-emote="okay">
+                <svg>
+                    <use xlink:href="#fb-emote-okay" />
+                </svg>
+                <p class="fb-emote__caption">Okay</p>
+            </div>
+            <div class="fb-emote" data-emote="good">
+                <svg>
+                    <use xlink:href="#fb-emote-good" />
+                </svg>
+                <p class="fb-emote__caption">Good</p>
+            </div>
+            <div class="fb-emote" data-emote="great">
+                <svg>
+                    <use xlink:href="#fb-emote-great" />
+                </svg>
+                <p class="fb-emote__caption">Great</p>
+            </div>
+            <div class="fb-cont__drag-cont">
+                <div class="fb-active-emote">
+                    <svg viewBox="0 0 100 100">
+                        <path class="fb-active-emote__eye fb-active-emote__eye--left"
+                            d="M32,25 a10,10 0 0,1 0,20 a10,10 0 0,1 0,-20" />
+                        <path class="fb-active-emote__eye fb-active-emote__eye--right"
+                            d="M68,25 a10,10 0 0,1 0,20 a10,10 0 0,1 0,-20" />
+                        <path class="fb-active-emote__smile" d="M35,73 q20,-4 35,-8 M35,73 q20,-4 35,-8" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="contact">
+        <div class="form-box">
+            <h1 class="form__title">FeedBack Form</h1>
+            <h2 class="form__subtitle">Tell Us How did we did It</h2>
+            <form action="/feedback" method="POST" class="form">
+                <div class="form__row">
+                    <div class="form__group">
+                        <input type="text" class="form__input" placeholder="Full Name" id="f-name" name="fname"
+                            required>
+                        <label for="f-name" class="form__label">Full Name</label>
+                    </div>
+
+                    <div class="form__group">
+                        <input type="email" class="form__input" placeholder="Email" id="f-email" name="femail" required>
+                        <label for="f-email" class="form__label">Email</label>
+                    </div>
+                </div><!-- form-row -->
+                <div class="form__row">
+                    <div class="form__group">
+                        <input type="text" class="form__input" placeholder="Company" id="f-company" name="fcompany"
+                            required>
+                        <label for="f-company" class="form__label">Company</label>
+                    </div>
+
+                    <div class="form__group">
+                        <input type="text" class="form__input" placeholder="Subject" id="f-subject" name="fsubject"
+                            required>
+                        <label for="f-subject" class="form__label">Subject</label>
+                    </div>
+                </div><!-- form-row -->
+                <div class="form__row">
+
+                    <input name="message" id="f-message" name="fmessage" class="form__textarea" required>
+
+
+                </div>
+                <div class="form__row">
+                    <div class="form-group">
+                        <button class="btn btn--primary">
+                            Send Message
+                        </button>
+                    </div>
+                </div>
+            </form><!-- form -->
+        </div><!-- form box -->
+    </div>
+
+    <script src="js/feedback.js"></script>
+</body>
+
+</html>

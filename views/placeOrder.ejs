@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/placeOrder.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+    
+</head>
+<body>
+
+    <div class="header">
+        <h1>Place Your Order</h1>
+    </div>
+    <div class="content">
+    </div>
+    
+    <br>
+    <br>
+    <br>
+    <br><br>
+    <br>
+    <br>
+    <br><br>
+    <form action="/placeOrder" id="booking-form" method="POST">
+    
+        <div class="tab-content">
+            <div class="tab-pane" id="step1">
+                <ul>
+                    <li>
+                        <label>Select Date</label>
+                        <div class="errorTxt"></div>
+                        <input name="date" type="text" placeholder="DD/MM/YYYY">
+                        </li>
+                        <li>
+                            <label>Select Avavilable Drivers : </label>
+                            <div class="errorTxt"></div>
+                            <select name="pricing">
+                                <option name="Select" value="">Select</option>
+                                <%allDrivers.forEach(function (row) {%>
+                                    <option name="<%=row.FullName%>"" value=" ShyamGandhi"">
+                                        <%=row.FullName%>
+                                    </option>
+                                    <%})%>
+                            </select>
+                            </li>
+                            <li>
+                                <label>Select Available Vehicles : </label>
+                                                    <div class="errorTxt"></div>
+                                                    <select name="pricing">
+                                                        <option name="Select" value="">Select</option>
+                                                        <%allVehicles.forEach(function (row) {%>
+                                                            <option name="<%=row.VehicleName%>"" value=" TATAPrima"">
+                                                                <%=row.VehicleName%>
+                                                            </option>
+                                                            <%})%>
+                            </select>
+                        </li>
+                                            
+                    
+                    <li style="list-style: none; display: inline">
+                        <button class="next-btn next-btn1" type="button">Next</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="tab-pane" id="step2">
+                <ul>
+                        <li>
+                            <label>Select Pickup Location</label>
+                            <div class="errorTxt"></div>
+                            <select name="pickupstate" id="listBox1" onchange='selct_district1(this.value)'></select>
+                            <select name="pickupcity" id='secondlist1'></select>
+                            </li>
+                            <li>
+                                <label>Select Drop Location</label>
+                                <div class="errorTxt"></div>
+                                <select name="dropstate" id="listBox2" onchange='selct_district2(this.value)'></select>
+                                <select name="dropcity" id='secondlist2'></select>
+                            </li>
+                    
+                    <li>
+                        <button class="next-btn next-btn2" type="button">Next</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="tab-pane" id="step3">
+                <ul>
+                    <li>
+                        <label>Your Name</label>
+                        <div class="errorTxt"></div>
+                        <input type="text" name="bf_name">
+                    </li>
+                    <li>
+                        <label>Email Address</label>
+                        <div class="errorTxt"></div>
+                        <input type="email" name="bf_email">
+                    </li>
+                    <li>
+                        <label>Do you have any questions or a message? (Optional)</label>
+                        <textarea name="bf_extraMessages"></textarea>
+                    </li>
+                    <li>
+                        
+                        <button class="submit-btn" type="submit">Place My Order !
+                        </button>
+                        
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        
+    
+        <div class="progress-wrap">
+            <div class="line-progress-bar">
+                <div class="line"></div>
+                <ul class="checkout-bar">
+                    <li class="progressbar-dots active"><span>step 1</span></li>
+                    <li class="progressbar-dots"><span>step 2</span></li>
+                    <li class="progressbar-dots"><span>Final step</span></li>
+                </ul>
+            </div>
+        </div>
+    
+        
+    </form>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    
+    <script src="js/placeOrder.js"></script>
+</body>
+</html>

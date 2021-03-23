@@ -1,0 +1,118 @@
+<!-- include header -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Application</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/zub3tbp.css">
+
+    <link rel="stylesheet" href="css/admin.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!-- Main Site -->
+    <main id="site-main">
+        <div class="container">
+            <div class="header">
+                <h1>GaadiMaalik Drivers Panel</h1>
+            </div>
+            <br>
+            <div class="content">
+            </div>
+            <div class="box-nav d-flex justify-between">
+                <a href="/add-driver" class="border-shadow">
+                    <span class="text-gradient">New Driver <i class="fas fa-user-plus"></i></span>
+                </a>
+                <a href="/dashboard" class="border-shadow">
+                    <span class="text-gradient">Display Orders</span>
+                </a>
+                <a href="/display-vehicle" class="border-shadow">
+                    <span class="text-gradient">Display Vehicles</span>
+                </a>
+                <a href="/logout" class="border-shadow">
+                    <span class="text-gradient">Log Out</span>
+                </a>
+            </div>
+
+            <!-- form handling -->
+            <form action="/" method="POST">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Full Name</th>
+                            <th>Date of Birth</th>
+                            <th>Age</th>
+                            <th>Driving License Number</th>
+                            <th>Address</th>
+                            <th>Phone Number</th>
+                            <th>Gender</th>
+                            <th>Email ID</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% allData.forEach(function(row) {%>
+                            <tr>
+                                <td>
+                                    <%= row.FullName %>
+                                </td>
+                                <td>
+                                    <%= row.DateOfBirth %>
+                                </td>
+                                <td>
+                                    <%= row.Age %>
+                                </td>
+                                <td>
+                                    <%= row.DrivingLicenseNumber %>
+                                </td>
+                                <td>
+                                    <%= row.Address %>
+                                </td>
+                                <td>
+                                    <%= row.PhoneNumber %>
+                                </td>
+                                <td>
+                                    <%= row.Gender %>
+                                </td>
+                                <td>
+                                    <%= row.EmailID %>
+                                </td>
+                                <td>
+                                    <a href="/update-driver?id=<%= row._id%>" class="btn border-shadow update">
+                                        <span class="text-gradient"><i class="fas fa-edit"></i></span>
+                                    </a>
+                                    <a class="btn border-shadow delete" style="cursor: pointer;" data-id=<%=row._id%> >
+                                        <span class="text-gradient"><i class="fas fa-trash-alt"></i></span>
+                                    </a>
+                                </td>
+                            </tr>
+                            <% }) %>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </main>
+    <!-- /Main Site -->
+
+
+    <!-- include footer -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+        crossorigin="anonymous"></script>
+    <script src="/js/index.js"></script>
+</body>
+
+</html>
+<!-- /include footer -->

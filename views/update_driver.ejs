@@ -1,0 +1,92 @@
+<!-- include header -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Application</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="./css/add-user.css">
+</head>
+
+<body>
+
+    <!-- Main Site -->
+    <main id="site-main">
+        <div class="container">
+            <div class="box-nav d-flex justify-between">
+                <div class="filter">
+                    <a href="/display-driver"><i class="fas fa-angle-double-left"></i> All Users</a>
+                </div>
+            </div>
+            <div class="form-title text-center">
+                <h2 class="text-dark">Update Drivers</h2>
+                <span class="text-light">Use the below form to Update a Driver</span>
+            </div>
+
+            <!-- add user form -->
+            <!-- form handling -->
+            <form method="POST" id="update_driver">
+                <div class="new_user">
+                    <div class="form-group">
+                        <label for="name" class="text-light">Full Name</label>
+                        <input type="hidden" name="id" value="<%= user._id %>">
+                        <input type="text" name="firstandlastname" value="<%= user.FullName %>"
+                            placeholder="Mark Stoenis">
+                    </div>
+                    <div class="form-group">
+                        <label for="Email" class="text-light">Date of Birth</label>
+                        <input type="text" name="Pricing" value="<%= user.DateOfBirth%>"
+                            placeholder="example@gmail.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="Email" class="text-light">Age</label>
+                        <input type="text" name="Date" value="<%= user.Age%>" placeholder="example@gmail.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="Email" class="text-light">Driving License Number</label>
+                        <input type="text" name="PickupState" value="<%= user.DrivingLicenseNumber%>"
+                            placeholder="example@gmail.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="Email" class="text-light">Address</label>
+                        <input type="text" name="PickupCity" value="<%= user.Address%>" placeholder="example@gmail.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="Email" class="text-light">Phone Number</label>
+                        <input type="text" name="DropState" value="<%= user.PhoneNumber%>"
+                            placeholder="example@gmail.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="Email" class="text-light">Gender</label>
+                        <input type="text" name="DropCity" value="<%= user.Gender%>" placeholder="example@gmail.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="Email" class="text-light">Email ID</label>
+                        <input type="text" name="emailID" value="<%= user.EmailID%>" placeholder="example@gmail.com">
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn text-dark update">Save</button>
+                    </div>
+
+                </div>
+            </form>
+
+        </div>
+    </main>
+    <!-- /Main Site -->
+
+    <!-- include footer -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+        crossorigin="anonymous"></script>
+    <script src="./js/update-driver.js"></script>
+</body>
+
+</html>
+<!-- /include footer -->

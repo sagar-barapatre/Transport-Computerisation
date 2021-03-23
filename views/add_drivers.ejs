@@ -1,0 +1,102 @@
+<!-- include header -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Application</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/add-user.css">
+</head>
+
+<body>
+
+    <!-- Main Site -->
+    <main id="site-main">
+        <div class="container">
+            <div class="box-nav d-flex justify-between">
+                <div class="filter">
+                    <a href="/display-driver"><i class="fas fa-angle-double-left"></i> All Users</a>
+                </div>
+            </div>
+            <div class="form-title text-center">
+                <h2 class="text-dark">Add Drivers</h2>
+                <span class="text-light">Use the below form to add or remove drivers in your database</span>
+            </div>
+
+            <!-- add user form -->
+            <!-- form handling -->
+            <form action="/api/drivers" method="POST" id="add_driver">
+                <div class="new_user">
+                    <div class="form-group">
+                        <label for="name" class="text-light">Full Name</label>
+                        <input type="hidden" name="id" value="">
+                        <input type="text" name="fullname" value="" placeholder="Enter Your Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="Email" class="text-light">Date Of Birth</label>
+                        <input type="text" name="dateofbirth" value="" placeholder="Your Pricing Plan">
+                    </div>
+                    <div class="form-group">
+                        <label for="name" class="text-light">Age</label>
+                        <input type="hidden" name="id" value="">
+                        <input type="text" name="age" value="" placeholder="Please enter Today's date">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name" class="text-light">Driving License Number</label>
+                        <input type="hidden" name="id" value="">
+                        <input type="text" name="drivinglicensenumber" value="" placeholder="Enter the Pickup State">
+                    </div>
+                    <div class="form-group">
+                        <label for="name" class="text-light">Aadhar Card Number (if available)</label>
+                        <input type="hidden" name="id" value="">
+                        <input type="text" name="aadharcardnumber" value="" placeholder="Enter Your Pickup City">
+                    </div>
+                    <div class="form-group">
+                        <label for="name" class="text-light">Address</label>
+                        <input type="hidden" name="id" value="">
+                        <input type="text" name="address" value="" placeholder="Enter Your Drop State">
+                    </div>
+                    <div class="form-group">
+                        <label for="name" class="text-light">Phone Number</label>
+                        <input type="hidden" name="id" value="">
+                        <input type="text" name="phonenumber" value="" placeholder="Enter Your Drop City">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name" class="text-light">Gender</label>
+                        <input type="hidden" name="id" value="">
+                        <input type="text" name="gender" value="" placeholder="Enter Your Email ID">
+                    </div>
+                    <div class="form-group">
+                        <label for="name" class="text-light">Email ID</label>
+                        <input type="hidden" name="id" value="">
+                        <input type="text" name="emailid" value="" placeholder="Any Extra Meesages for us!">
+                    </div>
+
+
+                    <div class="form-group">
+                        <button type="submit" class="btn text-dark update">Save</button>
+                    </div>
+
+                </div>
+            </form>
+
+        </div>
+    </main>
+    <!-- /Main Site -->
+
+    <!-- include footer -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+        crossorigin="anonymous"></script>
+    <script src="./js/update-driver.js"></script>
+</body>
+
+</html>
+<!-- /include footer -->
