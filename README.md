@@ -37,7 +37,6 @@ $ git clone https://github.com/sagar-barapatre/Transport-Computerisation.git
 $ cd Transport-Computerisation
 
 # Install npm dependencies
-$ cd backend 
 $ npm install
 
 # Create a .env file in the root directory
